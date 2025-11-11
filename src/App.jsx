@@ -116,8 +116,14 @@ function App() {
     <div id="page2" className="mt-5" >
       <div className="flex justify-around items-center text-black h-full">
 
-      <div>sdssssssssss <br />sdsd</div>
-      <div>sdssssssssss <br />sdsd</div>
+      <div>
+        <h1 className="text-4xl mb-5">About me </h1> <br />Test1
+      
+      </div>
+      <div>
+        <h1 className="text-4xl mb-5">About me </h1> <br />Test1
+      
+      </div>
 
       </div>
 
