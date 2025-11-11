@@ -5,7 +5,7 @@
     height: 100vh;
     background: radial-gradient(ellipse at bottom, #344961 0%, #090a0f 100%);
     overflow: hidden;
-
+    scale: 2.5;
 }
 
 #stars {

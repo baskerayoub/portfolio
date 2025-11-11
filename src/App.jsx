@@ -76,6 +76,7 @@ function App() {
       ease: "power3.out"
     });
   }
+  console.log(info);
   
   return (
     <>
@@ -92,9 +93,8 @@ function App() {
         <Background>
 
             <div
-              className="z-150 absolute left-[39.8%] flex justify-center mt-20"
-              style={{ display: info ? "" : "none" }}
               >
+                <h1>hello world</h1>
               <Baskerinfo />
             </div>
 

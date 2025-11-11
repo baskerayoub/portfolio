@@ -13,21 +13,17 @@ export default function Background({children}) {
   
 
 
-  gsap.fromTo(
+  gsap.to(
   "#body",
-  {
-    scale: 2.5, 
-    transformOrigin: "center center", 
-  },
   {
     scale: 1, 
     transformOrigin: "center center",
-    ease: "none",
+    ease : "power3.inOut",
     scrollTrigger: {
       trigger: "#body",
       start: "top top",
-      end: "+=650px",
-      scrub: true,
+      end: "bottom top",
+      scrub: .1,
       markers: true,
     },
   }
