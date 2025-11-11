@@ -1,6 +1,6 @@
 import Elastic from "./elastic"
 
-export default function ButtonAbout({ColorBtn , ColorBtnTx}) {
+export default function ButtonAbout({ColorBtn , ColorBtnTx, text}) {
   return (<>
       <Elastic>
     <div>
@@ -11,7 +11,7 @@ export default function ButtonAbout({ColorBtn , ColorBtnTx}) {
       }}
       
       >
-                 More About Me
+                 {text}
       </button>
 
 
