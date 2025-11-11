@@ -9,6 +9,7 @@ export default function Navbar({hoveroff , hoveron}) {
                 <h1 className="text-2xl cursor-help" onMouseEnter={hoveroff} onMouseLeave={hoveron}>
                     Basker
                 </h1>
+                
                 </Elastic>
             </div>
             <div id="navv" className="list-none flex gap-8 cursor-pointer">

@@ -16,6 +16,8 @@ function App() {
   const cursorChild = useRef(null);
 
 
+
+
   useEffect(() => {
   const move = (e) => {
     gsap.to(followerRef.current, {
@@ -74,7 +76,7 @@ function App() {
       ease: "power3.out"
     });
   }
-
+  
   return (
     <>
     
@@ -83,14 +85,14 @@ function App() {
       </div>
 
 
-    <div id="page1">
-        <Background>
             <div id="nav" onMouseEnter={()=>{HoverON(1)}} onMouseLeave={HoverOFF}>
               <Navbar hoveroff={() => setinfo(true)} hoveron={() => setinfo(false)} />
             </div>
+    <div id="page1">
+        <Background>
 
             <div
-              className="z-10 absolute left-[39.8%] flex justify-center mr-55 mb-40"
+              className="z-150 absolute left-[39.8%] flex justify-center mt-20"
               style={{ display: info ? "" : "none" }}
               >
               <Baskerinfo />
@@ -103,6 +105,7 @@ function App() {
               <div className="buttonTitle mt-20"  onMouseEnter={()=>{HoverON(1)}} onMouseLeave={HoverOFF}>
                 <ButtonAbout ColorBtn="azure"
                               ColorBtnTx = "#11334e"
+                              text="More About Me"
                               />
               </div>
             </div>
@@ -110,8 +113,14 @@ function App() {
     </div>
 
 
-    <div id="page2">
-      <h1>hello world</h1>
+    <div id="page2" className="mt-5" >
+      <div className="flex justify-around items-center text-black h-full">
+
+      <div>sdssssssssss <br />sdsd</div>
+      <div>sdssssssssss <br />sdsd</div>
+
+      </div>
+
     </div>
     </>
   );
