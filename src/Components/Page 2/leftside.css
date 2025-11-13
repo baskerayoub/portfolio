@@ -1,0 +1,16 @@
+.Picture{
+    overflow: hidden;
+}
+
+.Picture > img{
+    filter: grayscale();
+}
+.Picture > img:hover{
+    filter: none;
+}
+
+
+#plustobasker{
+    letter-spacing: 3px;
+    font-family: poppins ,cursive;
+}

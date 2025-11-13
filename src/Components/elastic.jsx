@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
 
-export default function index({children}) {
+export default function index({children, xvalue, yvalue}) {
     const magnetic = useRef(null);
 
     useEffect( () => {
@@ -14,8 +14,8 @@ export default function index({children}) {
             const {height, width, left, top} = magnetic.current.getBoundingClientRect();
             const x = clientX - (left + width/2)
             const y = clientY - (top + height/2)
-            xTo(x * 0.35);
-            yTo(y * 0.35)
+            xTo(x * xvalue);
+            yTo(y * yvalue)
         })
         magnetic.current.addEventListener("mouseleave", (e) => {
             xTo(0);

@@ -4,11 +4,14 @@ import gsap from "gsap";
 import "./App.css";
 import "./cursor.css";
 
-import Baskerinfo from "./Components/baskerinfo";
 import Navbar from "./Components/Navbar";
 import ButtonAbout from "./Components/ButtonAbout";
 import TitleMainPage from "./Components/TitleMainPage";
 import Background from "./Components/Background/Background";
+import LeftSide from "./Components/Page 2/LeftSide";
+import RightSide from "./Components/Page 2/RightSide";
+
+
 
 function App() {
   const [info, setinfo] = useState(false);
@@ -47,10 +50,6 @@ function App() {
   window.addEventListener("mousemove", move);
   window.addEventListener("click", click);
 
-  return () => {
-    window.removeEventListener("mousemove", move);
-    window.removeEventListener("click", click);
-  };
 }, []);
   function HoverON(scale) {
       gsap.to(cursorChild.current, {
@@ -92,11 +91,16 @@ function App() {
     <div id="page1">
         <Background>
 
+            {/*  Malade : 
             <div
               >
                 <h1>hello world</h1>
               <Baskerinfo />
             </div>
+
+             */}
+
+
 
             <div className="TitleMainPage">
               <div className="Tiitle text-center" >
@@ -113,21 +117,33 @@ function App() {
     </div>
 
 
-    <div id="page2" className="mt-5" >
-      <div className="flex justify-around items-center text-black h-full">
+      <div id="page2" className="mt-5" >
+        <div className="flex justify-evenly items-center text-black h-full">
 
-      <div>
-        <h1 className="text-4xl mb-5">About me </h1> <br />Test1
+        <div>
+              <LeftSide HoverOn={() => HoverON(3)} HoverOff={HoverOFF}/>
+
+        </div>
+
+
+        <div>
+              <RightSide  whoveron={() => HoverON(4)} whoveroff={HoverOFF}
+                          parahoveron={() => HoverON(2.5)} parahoveroff={HoverOFF}
+                
+                />
+        
+        </div>
+
+      </div>
+
+      </div>
+
+
+
+
+
+
       
-      </div>
-      <div>
-        <h1 className="text-4xl mb-5">About me </h1> <br />Test1
-      
-      </div>
-
-      </div>
-
-    </div>
     </>
   );
 }
