@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Elastic from "./elastic"
 export default function Navbar({hoveroff , hoveron}) {
   return (

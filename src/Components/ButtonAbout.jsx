@@ -1,15 +1,16 @@
 import Elastic from "./elastic"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { gsap } from "gsap";
-export default function ButtonAbout({ColorBtn , ColorBtnTx, text}) {
+export default function ButtonAbout({ColorBtn , ColorBtnTx, text , scrolto}) {
   gsap.registerPlugin(ScrollToPlugin);
   
 
-    function scroToPage2() {
+    function scroToPage() {
+      const tl = scrolto
       gsap.to(window ,{
         duration : 3,
         scrollTo :{
-          y : "#page2",
+          y : tl,
           autoKill : true
         } ,
         ease : "power3.inOut",
@@ -25,9 +26,10 @@ export default function ButtonAbout({ColorBtn , ColorBtnTx, text}) {
       <Elastic xvalue={0.35} yvalue={0.35} >
     <div>
 
-      <button onClick={scroToPage2} id="btnab" className='font-bold p-4 rounded-lg relative'
+      <button onClick={() => scroToPage()} id="btnab" className='font-bold p-4 rounded-lg relative'
       style={{"--colorbutton" : ColorBtn,
               "--colorbuttontx" : ColorBtnTx
+              
       }}
       
       >

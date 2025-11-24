@@ -1,41 +1,39 @@
-import { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-export default function TitleMainPage({ hoveron, hoveroff }) {
-  
+function TitleMainPage({ hoveron, hoveroff }) {
   useEffect(() => {
     gsap.to(".TitleMainPage", {
       scale: 0.5,
       opacity: 0.1,
       scrollTrigger: {
         trigger: "#body",
-        scrub: 0.1,
+        scrub: true,
         start: "center top",
         end: "bottom top",
       },
-    })
-
+    });
   }, []);
 
-  const MouseEnterOnBasker = () => {
+  const MouseEnterOnBasker = useCallback(() => {
     gsap.to("#Ayoub", {
       text: "BasKer",
       duration: 1.5,
       ease: "power2.inOut",
     });
-  };
+  }, []);
 
-  const MouseLeaveOnBasker = () => {
+  const MouseLeaveOnBasker = useCallback(() => {
     gsap.to("#Ayoub", {
       text: "Ayoub.",
       duration: 1,
       ease: "power2.inOut",
     });
-  };
+  }, []);
 
   return (
     <div id="ayoub">
@@ -56,3 +54,5 @@ export default function TitleMainPage({ hoveron, hoveroff }) {
     </div>
   );
 }
+
+export default React.memo(TitleMainPage);

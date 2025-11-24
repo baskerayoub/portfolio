@@ -1,0 +1,25 @@
+#lhamich{
+padding: 30px;
+background-color: antiquewhite;
+font-size: 30px;
+border: 2px solid black;
+overflow: hidden;
+border-right: dashed 1px rgba(0, 0, 0, 0.623);
+font-family: "Indie Flower", cursive;
+width: 70px;
+
+}
+#flexibleAdaptability, #tickett2, #tickett3, #tickett4, #tickett5{
+    border: 2px solid black;
+    border-left: dashed 1px rgba(0, 0, 0, 0.623);
+
+    border-radius: 0px 20px 20px 0px;
+    padding: 30px;
+    background-color: antiquewhite;
+    font-size: 30px;
+    overflow: hidden;
+    font-family: "Indie Flower", cursive;
+    font-weight: 500;
+
+
+}

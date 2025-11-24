@@ -1,12 +1,12 @@
 import "./RightSide.css"
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import ButtonAbout from "../ButtonAbout";
 import Elastic from "../elastic"
 import { useState } from "react";
-
+import ArrowButton from "./ArrowButton";
 
 
 
@@ -64,22 +64,27 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
 
 
   useEffect(() => {
-    const split = new SplitText("#TitleRs", { type: "words,chars" });
-    gsap.from(split.chars, {
-      opacity: 0,
-      stagger: 0.1,
-      ease: "power3.out",
-      scale : 2,  
-      scrollTrigger: {
-        trigger : "body",
-        start : "top+=800px top",
-        end : "bottom+=400px top",
-        scrub : 0.5,
 
 
-      },
       
+
+    gsap.to(".RightSideContainer",{
+    position: "relative",
+    left: "780px",
+    rotate: "-30deg",
+    filter: "blur(20px)",
+    scale : .1,
+    scrollTrigger: {
+      trigger: "#page3",
+      start: "top center",
+      end: "bottom bottom",
+      scrub: true,
+    }
+
+
+
     })
+
     
   }, []);
   return (
@@ -91,18 +96,17 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
           </Elastic>
           </div>
 
-            <div id="paragraphes" className="flex flex-row justify-between items-center">
-          <Elastic xvalue={0.5} yvalue={0.5} >
 
-            <div
-              onClick={PreviousPage}
-              className="relative left-[-38px] rounded-full border border-black p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-black hover:text-white transition"
-              >
-              <i className="fa-solid fa-arrow-left"></i>
-              <b>{pagescounter + "/5"}</b>
+
+
+            <div id="paragraphes" className="flex flex-row justify-between items-center h-[250px]">
+          <Elastic xvalue={0.1} yvalue={0.1} >
+              <div className="mr-11">
+
+              <ArrowButton onck={PreviousPage} counter={pagescounter + "/5"} Direction="left" BorderColor={pagescounter <= 1 ? "gray" : ""}/>
             </div>
 
-              </Elastic>
+            </Elastic>
 
 
               <p className="mt-15 text-lg leading-8 w-lg" id="FirstParagraphhe"
@@ -110,13 +114,9 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
               >
 
               </p>
-              <Elastic xvalue={0.5} yvalue={0.5} >
-              <div
-                onClick={NextPage}
-                className="relative right-[-38px] rounded-full border border-black p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-black hover:text-white transition"
-                >
-                <i className="fa-solid fa-arrow-right"></i>
-                <b>{pagescounter + "/5"}</b>
+              <Elastic xvalue={0.1} yvalue={0.1} >
+              <div className="ml-11">
+                <ArrowButton onck={NextPage} counter={pagescounter + "/5"} Direction="right" BorderColor={pagescounter >= 5 ? "gray" : ""}/>
               </div>
               </Elastic >
 
@@ -128,6 +128,7 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
               <ButtonAbout ColorBtn="black"
                             ColorBtnTx = "azure"
                             text="Let's Check Skills"
+                            scrolto="#page3"
               />
             </div>
 
