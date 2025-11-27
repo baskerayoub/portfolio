@@ -1,0 +1,26 @@
+#lngsicons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* مسافة بين الأيقونات */
+    justify-content: center; /* إذا بغيت الوسط */
+}
+
+#lngsicons > * {
+    flex: 1 1 22%; /* كل أيقونة تاخد تقريباً 1/4 من العرض مع شوية مساحة للـ gap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    width: 20px;
+    height: 50px;
+}
+
+#lngsicons :hover {
+    transition: 1s;
+    scale: 1.05;
+}
+#lngsicons {
+    transition: 1s /* تأثير الانتقال */
+}

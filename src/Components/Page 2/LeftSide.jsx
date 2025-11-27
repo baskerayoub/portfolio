@@ -82,7 +82,7 @@ function LeftSide({ HoverOn, HoverOff }) {
           <img
             onMouseEnter={plustobasker}
             onMouseLeave={baskertoplus}
-            src="BaskerPicture.png"
+            src="BaskerPicture.webp"
             alt="Basker"
             className="w-lg border border-black scale-130 hover:scale-110 duration-500 ease-in-out"
           />

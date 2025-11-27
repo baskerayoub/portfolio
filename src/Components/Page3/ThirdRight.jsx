@@ -3,36 +3,34 @@ import Elastic from "../elastic";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./ThirdRight.css";
+
+import { FaBootstrap , FaReact , FaNode , FaPython , FaJs  , FaGitAlt , FaCss3  } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { DiJqueryLogo , DiMysql , DiMongodb , DiPhp ,  } from "react-icons/di";
+
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
+  const Icons = [
+              <FaCss3 />,
+              <RiTailwindCssFill />,
+              <FaBootstrap />,
+              <FaJs />,
+              <DiJqueryLogo />,
+              <FaNode />,
+              <FaReact />,
+              <FaGitAlt />,
+              <FaPython />,
+              <DiMysql />,
+              <DiMongodb />,
+              <DiPhp />
 
+
+
+  ]
 function ThirdRight() {
-  const icons = [
-    "fa-brands fa-react hover:text-[#61DBFB]",
-    "fa-brands fa-css hover:text-[#264de4]",
-    "fa-brands fa-sass hover:text-[#cd6799]",
-    "fa-brands fa-bootstrap hover:text-[#7952b3]",
-    "fa-brands fa-python hover:text-[#306998]",
-    "fa-brands fa-laravel hover:text-[#ff2d20]",
-    "fa-brands fa-php hover:text-[#777bb3]",
-  ];
 
-  useEffect(() => {
-    gsap.to(".fa-brands", {
-      filter: "blur(0px)",
-      stagger: 0.5,
-      scrollTrigger: {
-        trigger: "#page3",
-        start: "top-=400px top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
     <div className="flex flex-col justify-evenly h-screen">
@@ -40,15 +38,24 @@ function ThirdRight() {
         <h1 className="allskils text-center">Hard Skills</h1>
       </div>
 
-      <div className="border border-black p-5 rounded-lg flex flex-row justify-center items-center gap-4 text-5xl h-[260px] overflow-hidden">
-        {icons.map((iconItem, index) => (
-          <Elastic xvalue={0.5} yvalue={0.5} key={index}>
-            <i
-              style={{ filter: "blur(5px)" }}
-              className={iconItem}
-            ></i>
-          </Elastic>
-        ))}
+      <div id="lngsicons" className="border border-black rounded-lg  text-5xl h-[260px] overflow-hidden">
+
+       <b className="hover:text-[#1572B6]" id="iconsLng"><FaCss3 /></b>
+        <b className="hover:text-[#06B6D4]" id="iconsLng"><RiTailwindCssFill /></b>
+        <b className="hover:text-[#7952B3]" id="iconsLng"><FaBootstrap /></b>
+        <b className="hover:text-[#F7DF1E]" id="iconsLng"><FaJs /></b>
+
+        <b className="hover:text-[#0769AD]" id="iconsLng"><DiJqueryLogo /></b>
+        <b className="hover:text-[#339933]" id="iconsLng"><FaNode /></b>
+        <b className="hover:text-[#61DAFB]" id="iconsLng"><FaReact /></b>
+        <b className="hover:text-[#F05032]" id="iconsLng"><FaGitAlt /></b>
+
+        <b className="hover:text-[#3776AB]" id="iconsLng"><FaPython /></b>
+        <b className="hover:text-[#4479A1]" id="iconsLng"><DiMysql /></b>
+        <b className="hover:text-[#47A248]" id="iconsLng"><DiMongodb /></b>
+        <b className="hover:text-[#777BB4]" id="iconsLng"><DiPhp /></b>
+
+
       </div>
       <div className="w-lg h-[100px] text-center text-lg">sd</div>
     </div>
