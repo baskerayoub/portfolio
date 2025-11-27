@@ -14,7 +14,6 @@ useEffect(() => {
   gsap.to("#body", {
     scale: 1,
     transformOrigin: "center center",
-    ease: "power3.inOut",
     scrollTrigger: {
       trigger: "#body",
       start: "top top",

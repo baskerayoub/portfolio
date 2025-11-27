@@ -8,12 +8,11 @@ export default function ButtonAbout({ColorBtn , ColorBtnTx, text , scrolto}) {
     function scroToPage() {
       const tl = scrolto
       gsap.to(window ,{
-        duration : 3,
+        duration : 1.5,
         scrollTo :{
           y : tl,
           autoKill : true
         } ,
-        ease : "power3.inOut",
         autokill : true
       })
 

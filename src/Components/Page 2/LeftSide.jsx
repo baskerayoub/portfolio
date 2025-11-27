@@ -24,7 +24,6 @@ function LeftSide({ HoverOn, HoverOff }) {
       rotate: "0deg",
       duration: 2,
       filter: "blur(0px)",
-      ease: "power2.out",
     });
 
     const tl2 = gsap.timeline({

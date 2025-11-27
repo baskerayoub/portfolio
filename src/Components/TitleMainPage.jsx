@@ -23,7 +23,6 @@ function TitleMainPage({ hoveron, hoveroff }) {
     gsap.to("#Ayoub", {
       text: "BasKer",
       duration: 1.5,
-      ease: "power2.inOut",
     });
   }, []);
 
@@ -31,7 +30,6 @@ function TitleMainPage({ hoveron, hoveroff }) {
     gsap.to("#Ayoub", {
       text: "Ayoub.",
       duration: 1,
-      ease: "power2.inOut",
     });
   }, []);
 

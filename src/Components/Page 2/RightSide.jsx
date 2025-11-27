@@ -41,14 +41,12 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
       color : "orange",
       filter : "blur(1px)",
       
-      ease: "power2.out",
     }, {
       duration: 2.5,
       filter : "blur(0px)",
       stagger: 0.1,
       color : "black",
       text: paragraphs[pagescounter],
-      ease: "power2.out",
     }
   
   
