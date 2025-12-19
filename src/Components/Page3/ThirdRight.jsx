@@ -8,34 +8,19 @@ import "./ThirdRight.css";
 import { FaBootstrap , FaReact , FaNode , FaPython , FaJs  , FaGitAlt , FaCss3  } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { DiJqueryLogo , DiMysql , DiMongodb , DiPhp ,  } from "react-icons/di";
+import { SiGreensock } from "react-icons/si";
 
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
-  const Icons = [
-              <FaCss3 />,
-              <RiTailwindCssFill />,
-              <FaBootstrap />,
-              <FaJs />,
-              <DiJqueryLogo />,
-              <FaNode />,
-              <FaReact />,
-              <FaGitAlt />,
-              <FaPython />,
-              <DiMysql />,
-              <DiMongodb />,
-              <DiPhp />
 
-
-
-  ]
-function ThirdRight() {
+function ThirdRight({HoverOnHardSkils ,HoverOffHardSkils }) {
 
 
 
   return (
     <div className="flex flex-col justify-evenly h-screen">
       <div>
-        <h1 className="allskils text-center">Hard Skills</h1>
+        <h1 className="allskils text-center lg:block md:block hidden">Hard Skills</h1>
       </div>
 
       <div id="lngsicons" className="border border-black rounded-lg  text-5xl h-[260px] overflow-hidden">
@@ -54,10 +39,22 @@ function ThirdRight() {
         <b className="hover:text-[#4479A1]" id="iconsLng"><DiMysql /></b>
         <b className="hover:text-[#47A248]" id="iconsLng"><DiMongodb /></b>
         <b className="hover:text-[#777BB4]" id="iconsLng"><DiPhp /></b>
+        <b className="hover:text-[#47A248]" id="iconsLng"><SiGreensock /></b>
 
 
       </div>
-      <div className="w-lg h-[100px] text-center text-lg">sd</div>
+      <div className="lg:flex md:flex md:justify-center lg:justify-center items-center h-[100px] hidden ">
+        <b
+          className="w-lg text-center text-lg"
+          onMouseEnter={HoverOnHardSkils}
+          onMouseLeave={HoverOffHardSkils}
+          >
+                Full stack development skills {" "}
+              <span className="opacity-60" >
+                   with continuous daily learning
+                </span>
+        </b>
+      </div>
     </div>
   );
 }

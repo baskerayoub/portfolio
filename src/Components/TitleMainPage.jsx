@@ -34,9 +34,9 @@ function TitleMainPage({ hoveron, hoveroff }) {
   }, []);
 
   return (
-    <div id="ayoub">
-      <span onMouseEnter={hoveron} onMouseLeave={hoveroff}>
-        Hi, I'm{" "}
+    <div id="ayoub" className="flex flex-col ">
+      <span onMouseEnter={hoveron} onMouseLeave={hoveroff} className="text-center lg:text-8xl md:text-8xl text-8xl">
+        It's{" "}
         <span
           id="Ayoub"
           onMouseLeave={MouseLeaveOnBasker}
@@ -46,7 +46,7 @@ function TitleMainPage({ hoveron, hoveroff }) {
         </span>
       </span>
       <br />
-      <span id="span2" onMouseEnter={hoveron} onMouseLeave={hoveroff}>
+      <span id="span2"  onMouseEnter={hoveron} onMouseLeave={hoveroff} className="lg:text-4xl md:text-3xl">
         Front-End Developer & Designer
       </span>
     </div>

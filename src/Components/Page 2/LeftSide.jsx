@@ -29,7 +29,7 @@ function LeftSide({ HoverOn, HoverOff }) {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: "#page3",
-        start: "top center",
+        start: "top-=300 center",
         end: "bottom bottom",
         scrub: 0.5,
       },
@@ -66,10 +66,11 @@ function LeftSide({ HoverOn, HoverOff }) {
   }, []);
 
   return (
-    <div>
+    <div className="md:hidden lg:block sm:hidden hidden">
       <div
+
         id="leftsideContainer"
-        className="mt-15"
+        className="mt-15 "
         style={{
           scale: 0.5,
           opacity: 0.1,

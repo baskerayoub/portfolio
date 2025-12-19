@@ -8,7 +8,7 @@
 }
 
 #lngsicons > * {
-    flex: 1 1 22%; /* كل أيقونة تاخد تقريباً 1/4 من العرض مع شوية مساحة للـ gap */
+    flex: 1 1 11%; /* كل أيقونة تاخد تقريباً 1/4 من العرض مع شوية مساحة للـ gap */
     display: flex;
     justify-content: center;
     align-items: center;

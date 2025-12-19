@@ -1,0 +1,42 @@
+#footer{
+    mix-blend-mode: difference;
+    position: relative;
+}
+
+
+#page5::before {
+    content: "";
+    position: absolute;
+    background-color: azure;
+    width: 5%;
+    height: 35%;
+    scale: 0;
+    top: 35%;
+    left: 47.6%;
+    border-radius: 50%;
+    transition: all 1s; /* ضروري باش transition يخدم */
+}
+#page5:hover::before {
+    scale: 25;
+}
+#instagram:hover{
+    color: #34abf0;
+    cursor: pointer;
+}
+#linkedin:hover{
+    color: #FFA500;
+    cursor: pointer;
+}
+
+#github:hover{
+    color: azure;
+    cursor: pointer;
+}
+#discord:hover{
+    color: #ffae00;
+    cursor: pointer;
+}
+#twitter:hover{
+    color: azure;
+    cursor: pointer;
+}

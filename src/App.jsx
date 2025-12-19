@@ -12,9 +12,16 @@ import LeftSide from "./Components/Page 2/LeftSide";
 import RightSide from "./Components/Page 2/RightSide";
 import ThirdLeft from "./Components/Page3/ThirdLeft";
 import ThirdRight from "./Components/Page3/ThirdRight";
+import ContactText from "./Components/Page4/ContactText"
+import ContactForm from "./Components/Page4/ContactForm"
+import Footer from "./Components/Page5/Footer";
+
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 
 function App() {
-  const [info, setinfo] = useState(false);
+  gsap.registerPlugin(ScrollToPlugin);
+
   const followerRef = useRef(null);
   const cursorChild = useRef(null);
   const animationRef = useRef(null);
@@ -60,7 +67,7 @@ function App() {
       scale: scale,
       duration: 0.5,
       ease: "power3.out",
-      overwrite: "auto"
+      overwrite: "auto",
     });
   }, []);
 
@@ -97,14 +104,14 @@ function App() {
       </div>
 
       <div id="nav" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
-        <Navbar hoveroff={() => setinfo(true)} hoveron={() => setinfo(false)} />
+        <Navbar/>
       </div>
 
       <div id="page1">
         <Background>
-          <div className="TitleMainPage">
-            <div className="Tiitle text-center">
-              <TitleMainPage hoveron={() => HoverON(5)} hoveroff={HoverOFF} />
+          <div className="TitleMainPage gap-20">
+            <div className="Tiitle text-center mt-22 ">
+              <TitleMainPage hoveron={() => HoverON(6)} hoveroff={HoverOFF} />
             </div>
             <div className="buttonTitle mt-20" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
               <ButtonAbout
@@ -119,7 +126,7 @@ function App() {
       </div>
 
       <div id="page2" className="mt-5">
-        <div className="flex justify-evenly items-center text-black h-full">
+        <div className="flex lg:flex-row md:flex-col justify-center lg:scale-100 md:scale-120 scale-70 lg:justify-around md:justify-safe items-center text-black h-full">
           <LeftSide HoverOn={() => HoverON(3)} HoverOff={HoverOFF} />
           <RightSide
             whoveron={() => HoverON(4)}
@@ -131,16 +138,45 @@ function App() {
       </div>
 
       <div id="page3" className="text-black">
-        <div className="flex flex-row text-4xl h-full justify-evenly items-center">
+        <div className="flex lg:flex-row md:flex-row flex-col lg:mb-0 md:mb-0 lg:scale-100 md:scale-120 scale-60 text-4xl h-full lg:justify-around md:justify-evenly justify-center items-center">
           <ThirdLeft
             MouseEnterInCart={() => HoverON(0)}
             MouseLeaveInCart={HoverOFF}
-            softMouseEnter={() => HoverON(4)}
+            softMouseEnter={() => HoverON(6)}
             softMouseLeave={HoverOFF}
           />
-          <ThirdRight />
+          <ThirdRight HoverOnHardSkils={() => HoverON(6)} HoverOffHardSkils={HoverOFF}/>
         </div>
       </div>
+
+      <div id="page4" className="flex justify-around items-center">
+        <div className="w-2/5 ml-5 lg:block md:block hidden lg:scale-100 md:scale-100 scale-50">
+          <ContactText ContactTextHoverOn={()=>{HoverON(7)}} ContactTextHoverOff={HoverOFF}/>
+        
+        
+        </div>
+        <div className="w-3/5 flex justify-center">
+          <ContactForm />
+        </div>
+      </div>
+
+      <div id="page5" onMouseEnter={()=>{HoverON(0)}}>
+        <Footer SocialTextOn={()=>{HoverON(5)}} SocialTextOff={HoverOFF}/>
+
+
+          <button className="hover:cursor-pointer"
+            onClick={() => gsap.to(window, { scrollTo: { y: "#page2" }, duration: 1 })}>return</button>
+        
+
+
+
+
+
+
+      </div>
+
+
+
     </>
   );
 }

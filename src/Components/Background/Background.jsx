@@ -32,7 +32,7 @@ useEffect(() => {
           // ملي كتحبس السكرول بشوية الأنيميشن يرجع يخدم
           scrollTimeout = setTimeout(() => {
             stars.forEach((s) => (s.style.animationPlayState = "running"));
-          },);
+          },100);
         }
       },
     },

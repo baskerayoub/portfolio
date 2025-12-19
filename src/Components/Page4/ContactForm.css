@@ -1,0 +1,35 @@
+#form::before{
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    top: 120%;
+    left: -150%;
+    transform: rotate(45deg);
+    background: linear-gradient(to top , transparent  , azure , transparent);
+    opacity: 0.2;
+    transition: 1s;
+
+}
+
+#form{
+    transition: 1s;
+    overflow: hidden;
+    
+}
+
+#form:hover{
+    transform: skew(4deg , 4deg);
+    scale: 0.95;
+    transition: 1s;
+
+}
+
+
+#form:hover::before{
+    top: -10%;
+    left: 10%;
+    transition: 1s;
+
+
+}
