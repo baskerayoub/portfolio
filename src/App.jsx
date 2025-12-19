@@ -4,6 +4,9 @@ import gsap from "gsap";
 import "./App.css";
 import "./cursor.css";
 
+// Import the new component
+import IntroScreen from "./Components/IntroScreen."; 
+
 import Navbar from "./Components/Navbar";
 import ButtonAbout from "./Components/ButtonAbout";
 import TitleMainPage from "./Components/TitleMainPage";
@@ -22,12 +25,15 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 function App() {
   gsap.registerPlugin(ScrollToPlugin);
 
+  // State to control the Intro Screen
+  const [showIntro, setShowIntro] = useState(true);
+
   const followerRef = useRef(null);
   const cursorChild = useRef(null);
   const animationRef = useRef(null);
   const lastTimeRef = useRef(0);
 
-  // Throttle mouse move to 16ms (60fps)
+  // ... (Keep all your existing Cursor Logic here: handleMouseMove, handleClick, HoverON, HoverOFF) ...
   const handleMouseMove = useCallback((e) => {
     const now = Date.now();
     if (now - lastTimeRef.current < 16) return;
@@ -97,8 +103,21 @@ function App() {
     };
   }, [handleMouseMove, handleClick]);
 
+  // If showing intro, we disable scrolling on the body to prevent users scrolling while screen is black
+  useEffect(() => {
+    if (showIntro) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.overflowX = "hidden"; // maintain your original css
+    }
+  }, [showIntro]);
+
   return (
     <>
+      {/* Render IntroScreen if showIntro is true */}
+      {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
+
       <div className="cursor" ref={followerRef}>
         <span className="cursorChild" ref={cursorChild}></span>
       </div>
@@ -107,6 +126,7 @@ function App() {
         <Navbar/>
       </div>
 
+      {/* Rest of your page content */}
       <div id="page1">
         <Background>
           <div className="TitleMainPage gap-20">
@@ -126,7 +146,8 @@ function App() {
       </div>
 
       <div id="page2" className="mt-5">
-        <div className="flex lg:flex-row md:flex-col justify-center lg:scale-100 md:scale-120 scale-70 lg:justify-around md:justify-safe items-center text-black h-full">
+         {/* ... (Keep existing content for Page 2) ... */}
+         <div className="flex lg:flex-row md:flex-col justify-center lg:scale-100 md:scale-120 scale-70 lg:justify-around md:justify-safe items-center text-black h-full">
           <LeftSide HoverOn={() => HoverON(3)} HoverOff={HoverOFF} />
           <RightSide
             whoveron={() => HoverON(4)}
@@ -138,7 +159,8 @@ function App() {
       </div>
 
       <div id="page3" className="text-black">
-        <div className="flex lg:flex-row md:flex-row flex-col lg:mb-0 md:mb-0 lg:scale-100 md:scale-120 scale-60 text-4xl h-full lg:justify-around md:justify-evenly justify-center items-center">
+         {/* ... (Keep existing content for Page 3) ... */}
+         <div className="flex lg:flex-row md:flex-row flex-col lg:mb-0 md:mb-0 lg:scale-100 md:scale-120 scale-60 text-4xl h-full lg:justify-around md:justify-evenly justify-center items-center">
           <ThirdLeft
             MouseEnterInCart={() => HoverON(0)}
             MouseLeaveInCart={HoverOFF}
@@ -150,32 +172,20 @@ function App() {
       </div>
 
       <div id="page4" className="flex justify-around items-center">
-        <div className="w-2/5 ml-5 lg:block md:block hidden lg:scale-100 md:scale-100 scale-50">
+         {/* ... (Keep existing content for Page 4) ... */}
+         <div className="w-2/5 ml-5 lg:block md:block hidden lg:scale-100 md:scale-100 scale-50">
           <ContactText ContactTextHoverOn={()=>{HoverON(7)}} ContactTextHoverOff={HoverOFF}/>
-        
-        
         </div>
         <div className="w-3/5 flex justify-center">
           <ContactForm />
         </div>
       </div>
 
-      <div id="page5" onMouseEnter={()=>{HoverON(0)}}>
+      <div id="page5">
         <Footer SocialTextOn={()=>{HoverON(5)}} SocialTextOff={HoverOFF}/>
-
-
           <button className="hover:cursor-pointer"
             onClick={() => gsap.to(window, { scrollTo: { y: "#page2" }, duration: 1 })}>return</button>
-        
-
-
-
-
-
-
       </div>
-
-
 
     </>
   );

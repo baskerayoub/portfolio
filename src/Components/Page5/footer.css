@@ -21,22 +21,17 @@
 }
 #instagram:hover{
     color: #34abf0;
-    cursor: pointer;
 }
 #linkedin:hover{
     color: #FFA500;
-    cursor: pointer;
 }
 
 #github:hover{
     color: azure;
-    cursor: pointer;
 }
 #discord:hover{
     color: #ffae00;
-    cursor: pointer;
 }
 #twitter:hover{
     color: azure;
-    cursor: pointer;
 }

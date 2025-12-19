@@ -39,7 +39,7 @@ function LeftSide({ HoverOn, HoverOff }) {
       position: "relative",
       left: "-780px",
       rotate: "30deg",
-      filter: "blur(50px)",
+      filter: "blur(10px)",
       scale: 0.1,
     });
 

@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import TextPlugin from "gsap/TextPlugin";
 import Elastic from "../elastic"
 import { useEffect, useState } from "react";
-export default function Footer({SocialTextOn , SocialTextOff}) {
+export default function Footer() {
   const [textsocialcounter, setTextsocialcounter] = useState(1);
 
 
@@ -35,7 +35,7 @@ export default function Footer({SocialTextOn , SocialTextOff}) {
   return (
     <div id="footer" onMouseEnter={()=>FooterHover()} className="flex flex-col justify-around items-center h-full p-4 gap-4">
         <div>
-          <h1 id="social" className="h-[30px] text-center tracking-[5px] font-bold text-3xl" onMouseEnter={SocialTextOn} onMouseLeave={SocialTextOff}>MY SOCIAL SPACES</h1>
+          <h1 id="social" className="h-[30px] text-center tracking-[5px] font-bold text-3xl" >MY SOCIAL SPACES</h1>
 
         </div>
         <div className="flex justify-center items-center gap-8 text-4xl text-white/80">
