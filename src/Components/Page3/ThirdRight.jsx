@@ -23,7 +23,7 @@ function ThirdRight({HoverOnHardSkils ,HoverOffHardSkils }) {
         <h1 className="allskils text-center lg:block md:block hidden">Hard Skills</h1>
       </div>
 
-      <div id="lngsicons" className="border border-black rounded-lg  text-5xl h-[260px] overflow-hidden">
+      <div id="lngsicons" className="border border-black rounded-lg text-5xl h-[260px] overflow-hidden">
 
        <b className="hover:text-[#1572B6]" id="iconsLng"><FaCss3 /></b>
         <b className="hover:text-[#06B6D4]" id="iconsLng"><RiTailwindCssFill /></b>

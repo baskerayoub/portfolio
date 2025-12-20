@@ -4,7 +4,10 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem; /* مسافة بين الأيقونات */
-    justify-content: center; /* إذا بغيت الوسط */
+    justify-content: center;
+    padding-right: 2%;
+    padding-left: 20px;
+    /* إذا بغيت الوسط */
 }
 
 #lngsicons > * {

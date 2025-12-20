@@ -3,7 +3,6 @@ import gsap from "gsap";
 
 import "./App.css";
 import "./cursor.css";
-
 // Import the new component
 import IntroScreen from "./Components/IntroScreen."; 
 
@@ -106,7 +105,7 @@ function App() {
   // If showing intro, we disable scrolling on the body to prevent users scrolling while screen is black
   useEffect(() => {
     if (showIntro) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowX = "hidden";
     } else {
       document.body.style.overflow = "auto";
       document.body.style.overflowX = "hidden"; // maintain your original css
@@ -160,7 +159,7 @@ function App() {
 
       <div id="page3" className="text-black">
          {/* ... (Keep existing content for Page 3) ... */}
-         <div className="flex lg:flex-row md:flex-row flex-col lg:mb-0 md:mb-0 lg:scale-100 md:scale-120 scale-60 text-4xl h-full lg:justify-around md:justify-evenly justify-center items-center">
+         <div className="flex lg:flex-row md:flex-row flex-col lg:mb-0 md:mb-0 lg:scale-100 md:scale-120 scale-60 text-4xl h-full lg:justify-evenly md:justify-evenly justify-center items-center">
           <ThirdLeft
             MouseEnterInCart={() => HoverON(0)}
             MouseLeaveInCart={HoverOFF}

@@ -97,7 +97,7 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
 
 
 
-            <div id="paragraphes" className="flex lg:flex-row md:flex-row flex-col justify-between items-center h-[250px]">
+            <div id="paragraphes" className="flex gap-15 lg:flex-row md:flex-row flex-col justify-between items-center h-[250px]">
           <Elastic xvalue={0.1} yvalue={0.1} >
               <div className="lg:mr-1 md:mr-15 mt-5">
 
@@ -107,7 +107,7 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
             </Elastic>
 
 
-              <p className="mt-15 text-lg leading-8 w-lg lg:h-[150px] md:h-[150px]" id="FirstParagraphhe"
+              <p className="mt-15 text-lg leading-8 w-lg " id="FirstParagraphhe"
               onMouseEnter={parahoveron} onMouseLeave={parahoveroff}
               >
 
@@ -122,7 +122,7 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
 
             </div>
 
-            <div id="BtnSkills" className="lg:mt-20 md:mt-20 mt-55  inline-block">
+            <div id="BtnSkills" className="lg:mt-20 md:mt-20 mt-75 inline-block">
               <ButtonAbout ColorBtn="black"
                             ColorBtnTx = "azure"
                             text="Let's Check Skills"
