@@ -114,7 +114,7 @@ function App() {
   return (
     <>
       {/* Render IntroScreen if showIntro is true */}
-      {/* {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />} */}
+      {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
 
       <div className="cursor" ref={followerRef}>
         <span className="cursorChild" ref={cursorChild}></span>
