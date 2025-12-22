@@ -5,7 +5,7 @@ import "./App.css";
 import "./cursor.css";
 // Import the new component
 import IntroScreen from "./Components/IntroScreen."; 
-
+import TimeZone from "./Components/TimeZone";
 import Navbar from "./Components/Navbar";
 import ButtonAbout from "./Components/ButtonAbout";
 import TitleMainPage from "./Components/TitleMainPage";
@@ -17,7 +17,6 @@ import ThirdRight from "./Components/Page3/ThirdRight";
 import ContactText from "./Components/Page4/ContactText"
 import ContactForm from "./Components/Page4/ContactForm"
 import Footer from "./Components/Page5/Footer";
-
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
@@ -115,7 +114,7 @@ function App() {
   return (
     <>
       {/* Render IntroScreen if showIntro is true */}
-      {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
+      {/* {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />} */}
 
       <div className="cursor" ref={followerRef}>
         <span className="cursorChild" ref={cursorChild}></span>
@@ -128,9 +127,14 @@ function App() {
       {/* Rest of your page content */}
       <div id="page1">
         <Background>
+          <div className="absolute bottom-4 left-4">
+            <TimeZone TimeHover={() => HoverON(3)} TimeHoverOff={HoverOFF} />
+          </div>
+          <div>
+          </div>
           <div className="TitleMainPage gap-20">
             <div className="Tiitle text-center mt-22 ">
-              <TitleMainPage hoveron={() => HoverON(6)} hoveroff={HoverOFF} />
+              <TitleMainPage hoveron={() => HoverON(9)} hoveroff={HoverOFF} />
             </div>
             <div className="buttonTitle mt-20" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
               <ButtonAbout

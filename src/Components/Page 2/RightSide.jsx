@@ -90,7 +90,7 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
         <div className="RightSideContainer mt-10 gap-12 scale-110 flex flex-col justify-between text-center">
           <div>
           <Elastic xvalue={0.15} yvalue={0.15} >
-            <h1 id="TitleRs" onMouseEnter={whoveron} onMouseLeave={whoveroff}>Who the hell am i ?</h1>
+            <h1 id="TitleRs" onMouseEnter={whoveron} onMouseLeave={whoveroff}>Who am i ?</h1>
           </Elastic>
           </div>
 

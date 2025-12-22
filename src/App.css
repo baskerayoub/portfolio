@@ -158,3 +158,9 @@ body{
   letter-spacing: 4px;
   
 }
+#imageAct{
+  mix-blend-mode: normal;
+  isolation: isolate;
+  background-color: black;
+  background-size: cover;
+}
