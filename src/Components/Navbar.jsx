@@ -109,23 +109,32 @@ export default function Navbar() {
 
         {/* LINKS */}
         <ul className="flex gap-8 text-sm cursor-pointer">
+          <Elastic xvalue={0.35} yvalue={0.35}>
+          
           <li onClick={() => gsap.to(window, { scrollTo: 0, duration: 1 })}>
             Home
           </li>
+          </Elastic>
+          <Elastic xvalue={0.35} yvalue={0.35}>
+
           <li
             onClick={() =>
               gsap.to(window, { scrollTo: "#page2", duration: 1 })
             }
-          >
+            >
             About
           </li>
+            </Elastic>
+          <Elastic xvalue={0.35} yvalue={0.35}>
+
           <li
             onClick={() =>
               gsap.to(window, { scrollTo: "#page4", duration: 1 })
             }
-          >
+            >
             Contact
           </li>
+            </Elastic>
         </ul>
       </div>
     </div>

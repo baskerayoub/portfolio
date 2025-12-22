@@ -35,7 +35,7 @@ export default function DiscordActivity({DsAct}) {
 
   return (
     <div style={{ color: "white" , mixBlendMode : "darken"  }}>
-      <h3 className="mb-5 w-40"><span className="mr-2">{data.discord_user.global_name} </span>
+      <h3 className="mb-5 w-48"><span className="mr-2">{data.discord_user.global_name} </span>
 
 
 
