@@ -14,7 +14,7 @@ export default function IntroScreen({ onComplete }) {
 
     const greetings = [
       "Hello", 
-      "مـرحـبــا", 
+      "مرحبا", 
       "Bonjour", 
       "ⴰⵣⵓⵍ" 
     ];
