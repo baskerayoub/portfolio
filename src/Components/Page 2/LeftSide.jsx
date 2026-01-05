@@ -50,19 +50,35 @@ function LeftSide({ HoverOn, HoverOff }) {
   }, []);
 
   const plustobasker = useCallback(() => {
-    gsap.to("#plustobasker", {
-      text: "BASKER",
-      duration: 1,
-      ease: "power2.inOut",
-    });
+    gsap.to("#plustobasker",{
+      rotate : "360deg",
+      duration : 1,
+      onComplete : ()=>{
+        gsap.to("#plustobasker", {
+          text: "BASKER",
+          duration: .5,
+          ease: "power2.inOut",
+        });
+
+
+      }
+    })
   }, []);
 
   const baskertoplus = useCallback(() => {
-    gsap.to("#plustobasker", {
-      text: "+",
-      duration: 1,
-      ease: "power2.inOut",
-    });
+   gsap.to("#plustobasker", {
+          text: "+",
+          duration: .5,
+          ease: "power2.inOut",
+      onComplete : ()=>{
+        gsap.to("#plustobasker",{
+        rotate : "-360deg",
+        duration : .5,
+        });
+
+
+      }
+    })
   }, []);
 
   return (
@@ -84,7 +100,7 @@ function LeftSide({ HoverOn, HoverOff }) {
             onMouseLeave={baskertoplus}
             src="BaskerPicture.webp"
             alt="Basker"
-            className="w-lg border border-black scale-130 hover:scale-110 duration-500 ease-in-out"
+            className="w-lg border border-black scale-140 hover:scale-130 duration-500 delay-500 ease-in-out"
           />
         </div>
         <div>

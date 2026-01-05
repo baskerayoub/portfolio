@@ -17,7 +17,6 @@ function TopArea({
 }) {
 
   const [ticket, setticket] = useState(5);
-  const [textTicket , settextTicket] = useState()
   const RealeseDrag = useCallback(
     function () {
       gsap.to(this.target, {

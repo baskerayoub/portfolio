@@ -55,8 +55,6 @@ export default function DiscordActivity({DsAct}) {
         <div key={i} className="flex justify-center items-center text-sm" style={{ marginBottom: 20 }}>
           
           {act.name && <p className=" w-55"> Playing {act.name} <br />{act.state && <span className="text-white/50 text-xs">{act.state.split(" ").splice(0, 3).join(" ")}</span>}</p>}
-          
-
           {act.assets?.large_image && (
             <img
             className="mix-blend-difference"
@@ -66,6 +64,8 @@ export default function DiscordActivity({DsAct}) {
             style={{ borderRadius: '8px', width: '58px', height: '58px',     mixBlendMode: 'normal',
     isolation: 'isolate' }}
 />
+          
+
           )}
 
         </div>
