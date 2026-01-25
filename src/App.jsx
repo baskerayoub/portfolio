@@ -61,6 +61,7 @@ function App() {
   }, []);
 
   const HoverON = useCallback((scale) => {
+    if (window.innerWidth <= 1024) return;
     gsap.to(cursorChild.current, {
       scale: 0,
       duration: 0.5,
@@ -128,7 +129,7 @@ function App() {
       {/* Rest of your page content */}
       <div id="page1">
         <Background>
-          <div className="absolute bottom-4 left-4">
+          <div className="hidden md:block absolute bottom-4 left-4">
             <TimeZone TimeHover={() => HoverON(3)} TimeHoverOff={HoverOFF} />
           </div>
           <div>

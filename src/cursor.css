@@ -1,24 +1,33 @@
-.cursor {
-    width: 20px;
-    height: 20px;
-    background-color: azure;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none; /* lets clicks pass through */
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    mix-blend-mode: difference;
+/* Only apply these styles to desktop/large screens */
+@media (min-width: 1025px) {
+    .cursor {
+        width: 20px;
+        height: 20px;
+        background-color: azure;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        mix-blend-mode: difference;
+    }
+
+    .cursorChild {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border-radius: 50%;
+        top: 25%;
+        position: fixed;
+        color: #cc9e1f50;
+    }
 }
 
-.cursorChild{
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border-radius: 50%;
-    top: 25%;
-    position: fixed;
-
-    color: #cc9e1f50;
+/* Hide the cursor elements by default on small screens */
+@media (max-width: 1024px) {
+    .cursor, .cursorChild {
+        display: none !important;
+    }
 }

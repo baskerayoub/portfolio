@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
-
+import "./Introscreen.css"
 export default function IntroScreen({ onComplete }) {
   const containerRef = useRef(null);
   const textRef = useRef(null);
@@ -10,8 +10,12 @@ export default function IntroScreen({ onComplete }) {
   const [currentTime, setCurrentTime] = useState("");
   const [index, setIndex] = useState(0);
 
-  const greetings = ["Hello", "مرحبا", "Bonjour", "ⴰⵣⵓⵍ"];
-
+const greetings = [
+  "Hello",
+  <span id="loader">مــرحــبا</span>,
+  "Bonjour",
+  "ⴰⵣⵓⵍ",
+];
   // Time effect
   useEffect(() => {
     const updateTime = () => {
@@ -92,14 +96,14 @@ export default function IntroScreen({ onComplete }) {
         <div className="relative h-48 flex items-center justify-center mb-16">
           <div
             ref={textRef}
-            className="text-center text-8xl md:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-300 to-blue-200"
+            className="text-center text-8xl md:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-[#66a1e4] via-[#96b8df] to-blue-200"
           >
             {greetings[index]}
           </div>
         </div>
 
         <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
-          <div ref={progressRef} className="h-full w-full bg-blue-400" style={{ transformOrigin: "left" }} />
+          <div ref={progressRef} className="h-full w-full bg-blue-800" style={{ transformOrigin: "left" }} />
         </div>
       </div>
     </div>

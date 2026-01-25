@@ -72,7 +72,7 @@ export default function Footer() {
 
         </div>
         <h1 className="text-white/60">
-          &copy;{" "} <span id="year">{new Date().getFullYear()}</span> BasKer. All rights reserved.
+          &copy;{" "} <span id="year">2025</span> BasKer. All rights reserved.
           </h1>
     </div>
   )

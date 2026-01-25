@@ -27,7 +27,7 @@ export default function RightSide({whoveron , whoveroff , parahoveron , parahove
   gsap.registerPlugin(SplitText,ScrollTrigger);
 
   const paragraphs = {
-    1: "I am <b id='AyoubBousskryIn2'>Ayoub Bousskry</b>, and I studied at <b>CMC(Cité des Métiers et des Compétences ) Laayoune</b>, where I followed a professional training program focused on digital development and modern technical solutions.",
+    1: "I am <b id='AyoubBousskryIn2'>Ayoub Bousskry</b>, and I studied at <b>CMC(Cité des Métiers et des Compétences )</b>, where I followed a professional training program focused on digital development and modern technical solutions.",
     2: "After completing this program, I graduated as a <b>Full Stack Developer</b>, gaining the ability to work on both <b>front-end</b> and <b>back-end</b> development with a solid understanding of how complete web applications are built.",
     3: "Over time, I discovered a strong interest and natural talent in Front-End Development, especially in creating user interfaces that combine logic, creativity, and usability.",
     4: "Alongside web development, I have solid skills in <b>Python</b>, which I use for problem-solving, automation, and building efficient technical solutions that complement my web projects.",

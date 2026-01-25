@@ -4,18 +4,6 @@
 }
 
 
-#page5::before {
-    content: "";
-    position: absolute;
-    background-color: azure;
-    width: 5%;
-    height: 35%;
-    scale: 0;
-    top: 35%;
-    left: 47.6%;
-    border-radius: 50%;
-    transition: all 1s; /* ضروري باش transition يخدم */
-}
 #page5:hover::before {
     scale: 25;
 }
