@@ -24,8 +24,8 @@ export default function ButtonAbout({ColorBtn , ColorBtnTx, text , scrolto}) {
   return (<>
       <Elastic xvalue={0.35} yvalue={0.35} >
     <div>
-
-      <button onClick={() => scroToPage()} id="btnab" className='font-bold p-4 rounded-lg relative'
+      
+      <button onClick={() => scroToPage()} id="btnab" className='font-bold p-4 rounded-full px-6 relative'
       style={{"--colorbutton" : ColorBtn,
               "--colorbuttontx" : ColorBtnTx
               

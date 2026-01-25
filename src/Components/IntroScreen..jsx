@@ -58,7 +58,7 @@ export default function IntroScreen({ onComplete }) {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[99999] bg-black/60 backdrop-blur-xl flex justify-center items-center select-none"
+      className="fixed inset-0 z-99999 bg-black/60 backdrop-blur-xl flex justify-center items-center select-none"
     >
       <h1
         ref={textRef}
@@ -66,7 +66,7 @@ export default function IntroScreen({ onComplete }) {
         style={{ fontFamily: "'El Messiri', sans-serif",
          }}
       >
-        Hello
+        
       </h1>
     </div>
   );

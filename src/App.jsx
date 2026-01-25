@@ -120,9 +120,10 @@ function App() {
         <span className="cursorChild" ref={cursorChild}></span>
       </div>
 
-      <div id="nav" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
-        <Navbar/>
-      </div>
+{/* Remove id="nav" or change its CSS */}
+<div className="contents" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
+  <Navbar/>
+</div>
 
       {/* Rest of your page content */}
       <div id="page1">
@@ -136,7 +137,7 @@ function App() {
             <div className="Tiitle text-center mt-22 ">
               <TitleMainPage hoveron={() => HoverON(9)} hoveroff={HoverOFF} />
             </div>
-            <div className="buttonTitle mt-20" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
+            <div className="buttonTitle mt-15" onMouseEnter={() => HoverON(1)} onMouseLeave={HoverOFF}>
               <ButtonAbout
                 ColorBtn="azure"
                 ColorBtnTx="#11334e"
@@ -174,15 +175,22 @@ function App() {
         </div>
       </div>
 
-      <div id="page4" className="flex justify-around items-center">
-         {/* ... (Keep existing content for Page 4) ... */}
-         <div className="w-2/5 ml-5 lg:block md:block hidden lg:scale-100 md:scale-100 scale-50">
-          <ContactText ContactTextHoverOn={()=>{HoverON(7)}} ContactTextHoverOff={HoverOFF}/>
-        </div>
-        <div className="w-3/5 flex justify-center">
-          <ContactForm />
-        </div>
-      </div>
+      <div id="page4" className="min-h-screen w-full flex flex-col lg:flex-row justify-around items-center px-6 py-20 gap-10">
+    
+    {/* Text Section: Hidden on mobile, appears from Large screens up */}
+    <div className="w-full lg:w-2/5 order-2 lg:order-1 hidden lg:block">
+        <ContactText 
+            ContactTextHoverOn={() => { HoverON(7) }} 
+            ContactTextHoverOff={HoverOFF} 
+        />
+    </div>
+
+    {/* Form Section: Full width on mobile, 3/5 width on Desktop */}
+    <div className="w-full lg:w-3/5 flex justify-center order-1 lg:order-2">
+        <ContactForm />
+    </div>
+    
+</div>
 
       <div id="page5">
         <Footer SocialTextOn={()=>{HoverON(5)}} SocialTextOff={HoverOFF}/>
